@@ -14,7 +14,7 @@ class GoogleAuthProvider extends AbstractAuthProvider {
 		$this->AuthDialogParameters = array(
 			'client_id'     => $this->key,
 			'response_type' => 'code',
-			'scope'         => 'openid profile',
+			'scope'         => 'openid profile email',
 			'redirect_uri'  => '{CALLBACK_URL}',
 			//'state'         => '{STATE}',
 		);

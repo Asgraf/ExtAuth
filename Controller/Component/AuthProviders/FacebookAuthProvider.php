@@ -15,6 +15,7 @@ class FacebookAuthProvider extends AbstractAuthProvider {
 			'client_id'         => $this->key,
 			'redirect_uri'      => '{CALLBACK_URL}',
 			//'state'           => '{STATE}',
+			'scope' => 'email'
 		);
 
 		$this->accessTokenURL           = 'https://graph.facebook.com/oauth/access_token';
@@ -40,7 +41,7 @@ class FacebookAuthProvider extends AbstractAuthProvider {
 		// straight copy items
 		$response = array_intersect_key(
 			$profile,
-			array_flip(array('locale', 'gender', 'username'))
+			array_flip(array('locale', 'gender', 'username','email'))
 		);
 
 		// mapped items
